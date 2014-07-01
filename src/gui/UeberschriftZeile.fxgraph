@@ -1,0 +1,95 @@
+package gui
+
+import javafx.geometry.Insets
+import javafx.scene.layout.GridPane
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.scene.text.Font
+
+component UeberschriftZeile controlledby controller.UiController {
+	
+	HBox {
+		spacing : 5,
+//		maxWidth: 150,
+		children:[
+			Label id ueberschriftLabel{
+				padding : Insets {
+  					left: 5,
+  					right: 5,
+    				top: 3,
+    				bottom: 2
+    			},
+				text: "'\u00dcberschrift'",
+				scaleY : 1.1,
+				scaleX : 1.1
+			},
+			Button id addAufgabe{
+				text: "+",
+				onAction : controllermethod addAufgabeClicked
+			},
+			Button id sortUP {
+				text: "\u2191", //UTF-8. ↑
+				style: "-fx-font-weight: bold;",
+				onAction : controllermethod sortForDateUp
+			},
+			Button id sortDown {
+				text: "\u2193", //"↓"
+				onAction : controllermethod sortForDateDown
+				
+			}
+		]
+	}
+}
+
+
+
+//alte Variante mit GridPane (hässlicher, bzw aufwendiger es hübsch zu bekommen 
+/*
+ * GridPane {
+		maxWidth: 150,
+		//prefWidth: const Double#MAX_VALUE,
+		//maxHeight :  const Double#MAX_VALUE,
+		//prefHeight :  const Double#MAX_VALUE,
+		children:[
+			Label{
+				text: "'\u00dcberschrift'    ",
+				static columnIndex: 0,
+				static rowIndex: 0
+			},
+			Button id addAufgabe{
+				alignment : "BASELINE_RIGHT",
+				//prefHeight: 10,
+				//maxHeight : 15,
+				text: "+",
+				style: "-fx-font-weight: bold;",
+				static columnIndex: 2,
+				static rowIndex: 0,
+				onAction : controllermethod addAufgabeClicked
+			},
+			Button id sortUP {
+				alignment : "BASELINE_RIGHT",
+				//prefHeight: 10,
+				//maxHeight : 15,
+				text: "\u2191", //UTF-8. ↑
+				style: "-fx-font-weight: bold;",
+				static columnIndex: 3,
+				static rowIndex: 0,
+				onAction : controllermethod sortForDateUp
+			},
+			Button id sortDown {
+				alignment : "BASELINE_RIGHT",
+				//prefHeight: 10,
+				//maxHeight : 15,
+				text: "\u2193", //"↓"
+				style: "-fx-font-weight: bold;",
+				static columnIndex: 4,
+				static rowIndex: 0,
+				onAction : controllermethod sortForDateDown
+				
+			}
+		]
+	}
+}
+ 
+ * 
+ */

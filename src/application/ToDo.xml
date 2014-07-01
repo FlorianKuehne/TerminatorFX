@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet
+      title="TerminatorFX">
+   <intro>
+      <description>
+         Alle noch zu erledigenden Aufgaben für grundlegende Funktionstüchtigkeit
+      </description>
+   </intro>
+   <item
+         title="Bind Data to GUI">
+      <description>
+         <b>Body</b>
+      </description>
+   </item>
+   <item
+         title="Save &amp; Restore Data">
+      <description>
+         <b>Body</b>
+      </description>
+   </item>
+   <item
+         title="Terminator Logic">
+      <description>
+         <b>Body</b>
+      </description>
+   </item>
+</cheatsheet>

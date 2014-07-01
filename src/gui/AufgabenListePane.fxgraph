@@ -1,0 +1,22 @@
+/**
+ * Struktur: VBOX - children : Überschriftzeile,Separator,Tabellenelement
+ */
+
+package gui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.scene.control.Separator
+
+
+component AufgabenListePane {
+	VBox{
+		children:[
+			include gui.UeberschriftZeile,
+		   	Separator {
+	   			orientation: "HORIZONTAL"
+	  		}//,
+//			include gui.TabellenElementGui
+	    ]
+	}
+}

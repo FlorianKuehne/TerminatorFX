@@ -1,0 +1,99 @@
+package gui
+
+
+import javafx.scene.layout.VBox
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+import javafx.scene.paint.Color
+import javafx.scene.text.Font
+
+
+component TabellenElementGui controlledby controller.UiController{
+	VBox id tabellenEintragAufgabe {	
+		maxWidth:300,	
+		children:[				
+			GridPane {	//Layout
+			gridLinesVisible : false,			
+		//  ^-- for Layoutdebuging -> true
+			children:
+			
+			[
+				Label id Aufgabenbezeichnung {	//Control		
+					//TODO			
+					text: "'AufgabenBezeichnung'",
+					textFill: const Color#GREY,
+					font: Font {size: 15 },	//Fontsize
+					static columnIndex: 1,
+					static rowIndex: 0,
+					static columnSpan: 2,
+					static halignment : "CENTER"
+				//	styleClass: [	//hier könnte Einstiegspunkt für CSS-Themeing kommen
+						
+				},
+				Button id editAufgabenbezeichnungName {
+					text: "...",
+					font: Font {size: 20 },
+					static columnIndex: 0,
+					static rowIndex: 0,
+					static halignment : "LEFT"
+				},
+				Label id startDate {
+					minWidth : 30,
+					text: "start: ",
+					static columnIndex: 0,
+					static rowIndex: 1
+				},
+				DatePicker id startDatePicker{
+					static columnIndex: 1,
+					static rowIndex: 1,
+					static columnSpan: 2
+				},
+				Label id endDate{
+					text: "ende: ",
+					static columnIndex: 0,
+					static rowIndex: 2
+					//static columnSpan: 1
+				},
+				DatePicker id endDatePicker{
+					static columnIndex: 1,
+					static rowIndex: 2,
+					static columnSpan: 2
+				},
+				Label {
+					text: "Wichtigkeit ",
+					minWidth : 40,
+					static columnIndex: 0,
+					static rowIndex: 3
+				},
+				TextField id importanceValue {
+					static columnIndex: 2,
+					static rowIndex: 3,
+					static columnSpan: 1
+				},
+				Label {
+					text: "Aufgabe: ",
+					static columnIndex: 0,
+					static rowIndex: 4
+				},
+				TextArea id workDescription {
+					static columnIndex: 2,
+					static rowIndex: 4,
+					static columnSpan: 1,
+					static rowSpan: 2
+				},
+				Label {
+					text: "",		//Leere Zeile am Ende
+					font: Font {size: 3},	//Fontsize
+					static columnIndex: 0,
+					static rowIndex: 7
+				}	
+			]
+			
+		},
+		Separator {
+				orientation: "HORIZONTAL"
+			}
+		]
+	}
+}
